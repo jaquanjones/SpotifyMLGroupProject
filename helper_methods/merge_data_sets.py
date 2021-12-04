@@ -68,7 +68,7 @@ song_info_matrix = np.array(merged_song_info_list, dtype=object)
 
 merged_song_info_df = pd.DataFrame(song_info_matrix, columns=merged_song_info_feature_list)
 
-# merged_song_info_df.to_csv('../datasets/merged_2015_2020_top_songs.csv', index=False)
+merged_song_info_df.to_csv('../datasets/merged_2015_2020_top_songs.csv', index=False)
 
 
 # merged_song_info_dictionary['Spotify ID'] = {
