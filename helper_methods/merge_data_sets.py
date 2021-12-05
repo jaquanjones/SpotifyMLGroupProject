@@ -39,7 +39,7 @@ for top_id in top_song_ids:
         formatted_song_info = [
             feature_list_1[0],
             feature_list_1[1],
-            feature_list_1[5],
+            feature_list_2[2],  # feature list 2 version of 'artists' since feature list 1 has list as a string
             feature_list_2[3],
             feature_list_2[4],
             feature_list_2[5].split(","),
@@ -68,8 +68,7 @@ song_info_matrix = np.array(merged_song_info_list, dtype=object)
 
 merged_song_info_df = pd.DataFrame(song_info_matrix, columns=merged_song_info_feature_list)
 
-# merged_song_info_df.to_csv('../datasets/merged_2015_2020_top_songs.csv', index=False)
-
+merged_song_info_df.to_csv('../datasets/merged_2015_2020_top_songs.csv', index=False)
 
 # merged_song_info_dictionary['Spotify ID'] = {
 #     'Spotify ID': match_value_list[0],
