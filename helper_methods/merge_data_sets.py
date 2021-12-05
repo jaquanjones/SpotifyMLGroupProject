@@ -7,7 +7,10 @@ all_spotify_songs_df = pd.read_csv('../datasets/tracks.csv')
 top_songs_2010_2020_df = pd.read_csv('../datasets/top_100_2011-2020_with_genres.csv')
 
 # reduce range of 2010-2020 data set to 2016-2020 (5 years)
-top_songs_2010_2020_df = top_songs_2010_2020_df[499:]
+# top_songs_2010_2020_df = top_songs_2010_2020_df[499:]
+
+# testing dataset with top 100 songs 2010
+top_songs_2010_2020_df = top_songs_2010_2020_df
 print(top_songs_2010_2020_df.head())
 # top_songs_2015_2020_df = top_songs_2010_2020_df[499:]
 
@@ -19,11 +22,11 @@ missing_song_ids = []
 
 # Gather relevant column names from each data_set for new df (see commented code to at bottom to print list of names)
 merged_song_info_feature_list = ['Spotify ID', 'Title', 'Artists', 'Year',
-                                 'Rank',
-                                 # 'Genres',
+                                 'Rank', 'Genres',
                                  'Acousticness', 'Energy', 'Instrumentalness', 'Key',
                                  'Liveness', 'Loudness', 'Mode', 'Speechiness',
                                  'Tempo', 'Time Signature', 'Valence', 'Top 100']
+merged_song_info_feature_list = [name.strip() for name in merged_song_info_feature_list]
 merged_song_info_list = []
 
 # iterate through song ids to find if each id is in all_spotify_songs_df
@@ -46,7 +49,7 @@ for top_id in top_song_ids:
             feature_list_2[3],
             feature_list_2[4],
             # will disregard genre to experiment what type of findings made without it
-            # feature_list_2[5].split(","),
+            feature_list_2[5],
             feature_list_1[14],
             feature_list_1[9],
             feature_list_1[15],
@@ -60,6 +63,7 @@ for top_id in top_song_ids:
             feature_list_1[17],
             1 if feature_list_2[4] >= 50 else 0
         ]
+
         merged_song_info_list.append(formatted_song_info)
         print(formatted_song_info)
     else:
@@ -72,7 +76,7 @@ song_info_matrix = np.array(merged_song_info_list, dtype=object)
 
 merged_song_info_df = pd.DataFrame(song_info_matrix, columns=merged_song_info_feature_list)
 
-merged_song_info_df.to_csv('../datasets/alternate_top_50_songs_from_2016_2020.csv', index=False)
+merged_song_info_df.to_csv('../datasets/merged_2010_2020_top_songs.csv', index=False)
 
 # merged_song_info_dictionary['Spotify ID'] = {
 #     'Spotify ID': match_value_list[0],
