@@ -19,7 +19,8 @@ missing_song_ids = []
 
 # Gather relevant column names from each data_set for new df (see commented code to at bottom to print list of names)
 merged_song_info_feature_list = ['Spotify ID', 'Title', 'Artists', 'Year',
-                                 # 'Rank', 'Genres',
+                                 'Rank',
+                                 # 'Genres',
                                  'Acousticness', 'Energy', 'Instrumentalness', 'Key',
                                  'Liveness', 'Loudness', 'Mode', 'Speechiness',
                                  'Tempo', 'Time Signature', 'Valence', 'Top 100']
@@ -43,8 +44,7 @@ for top_id in top_song_ids:
             feature_list_1[1],
             feature_list_2[2],  # feature list 2 version of 'artists' since feature list 1 has list as a string
             feature_list_2[3],
-            # will use rank to decide label rather than feature
-            # feature_list_2[4],
+            feature_list_2[4],
             # will disregard genre to experiment what type of findings made without it
             # feature_list_2[5].split(","),
             feature_list_1[14],
@@ -72,7 +72,7 @@ song_info_matrix = np.array(merged_song_info_list, dtype=object)
 
 merged_song_info_df = pd.DataFrame(song_info_matrix, columns=merged_song_info_feature_list)
 
-# merged_song_info_df.to_csv('../datasets/alternate_top_50_songs_from_2016_2020.csv', index=False)
+merged_song_info_df.to_csv('../datasets/alternate_top_50_songs_from_2016_2020.csv', index=False)
 
 # merged_song_info_dictionary['Spotify ID'] = {
 #     'Spotify ID': match_value_list[0],
