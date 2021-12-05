@@ -1,4 +1,4 @@
-Spotify ID,Title,Artists,Year,Rank,Genres,Acousticness,Energy,Instrumentalness,Key,Liveness,Loudness,Mode,Speechiness,Tempo,Time Signature,Valence,Top 100
+Spotify ID,Title,Artists,Year,Rank,Genres,Acousticness,Energy,Instrumentalness,Key,Liveness,Loudness,Mode,Speechiness,Tempo,Time Signature,Valence,Top 50
 1c8gk2PeTE04A1pIDH9YMk,Rolling in the Deep,Adele,2011,1,"british soul, pop, pop soul, uk pop",0.138,0.769,0,8,0.0473,-5.114,1,0.0298,104.948,4,0.507,0
 0IkKz2J93C94Ei4BvDop7P,Party Rock Anthem,LMFAO Featuring Lauren Bennett & GoonRock,2011,2,"dance pop, pop rap",0.0189,0.727,0,5,0.266,-4.21,0,0.142,129.993,4,0.359,0
 4r6eNCsrZnQWJzzvFh4nlg,Firework,Katy Perry,2011,3,"dance pop, pop, pop rap, post-teen pop",0.141,0.832,0,8,0.113,-5.039,1,0.049,124.071,4,0.648,0
